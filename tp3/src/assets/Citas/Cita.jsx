@@ -1,3 +1,5 @@
+import './Cita.css';
+
 const Cita = ({ cita, eliminarCita }) => {
     return (
         <div className="cita">

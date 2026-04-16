@@ -1,44 +1,43 @@
 .cita {
-        padding: 2rem;
-        background: white;
-        border-bottom: 1px solid #e1e1e1;
-        color: black;
-        margin-bottom: 20px;
-      }
+  padding: 2rem;
+  background: white;
+  border-bottom: 1px solid #e1e1e1;
+  color: black;
+  margin-bottom: 0;
+}
 
-      .cita p {
-        font-weight: bold;
-        margin-bottom: .8rem;
-      }
+.cita:first-of-type {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
 
-      .cita p span {
-        font-weight: normal;
+.cita:last-of-type {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
 
-      }
+.cita ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-      .cita:first-of-type {
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
-      }
+.cita ul li {
+  margin-bottom: 0.8rem;
+}
 
-      .cita:last-of-type {
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-      }
+.cita button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #c10059;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
 
-      .button.eliminarCita,
-      .button.eliminarCita:hover {
-        background-color: #c10059;
-        color: white;
-        margin-top: 2rem;
-      }
-
-      .alerta-error {
-        background-color: white;
-        color: red;
-        padding: 1rem;
-        font-size: 2rem;
-        text-transform: uppercase;
-        text-align: center;
-        font-family: 'Staatliches', cursive;
-      }
+.cita button:hover {
+  background-color: #a0004a;
+}
