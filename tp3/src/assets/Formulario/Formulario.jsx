@@ -1,13 +1,13 @@
 import { useState } from "react";
 import './Formulario.css';
-const Formulario = () => {
-    const [listaMascotas, setListaMascotas] = useState([]);
-    const [nombreMascota, setNombreMascota]=useState("");
-    const [nombreDueño, setNombreDueño]=useState("");
-    const [fecha, setFecha]=useState("");
-    const [hora, setHora]=useState("");
-    const [sintomas, setSintomas]=useState("");
-     
+
+const Formulario = ({ listaMascotas, setListaMascotas }) => {
+    const [nombreMascota, setNombreMascota] = useState("");
+    const [nombreDueño, setNombreDueño] = useState("");
+    const [fecha, setFecha] = useState("");
+    const [hora, setHora] = useState("");
+    const [sintomas, setSintomas] = useState("");
+
     const formularioSubmit = (e) => {
         e.preventDefault();
         const nuevaMascota = {
@@ -25,44 +25,21 @@ const Formulario = () => {
         setHora("");
         setSintomas("");
     };
+
     return (
         <div className="formulario app__main">
-
             <form onSubmit={formularioSubmit}>
-                <label htmlFor="nombreMascota">Nombre Mascota:</label>
-                <input 
-                type="text" 
-                onKeyUp={(event)=> setNombreMascota(event.target.value)}
-            />
-                <label htmlFor="nombreDueño">Nombre Dueño:</label>
-                <input 
-                type="text" 
-                onKeyUp={(event)=> setNombreDueño(event.target.value)}
-            />
-                <label htmlFor="date">Fecha:</label>
-                <input 
-                type="text" 
-                onKeyUp={(event)=> setFecha(event.target.value)}
-            />
-                <label htmlFor="time">Hora:</label>
-                <input 
-                type="text" 
-                onKeyUp={(event)=> setHora(event.target.value)}
-            />
-
-                <label htmlFor="sintomas">Sintomas:</label>
-                <input 
-                type="text" 
-                onKeyUp={(event)=> setSintomas(event.target.value)}
-            />
-
-                <button 
-                onClick={() => {
-                setListaMascotas([
-                    ...listaMascotas,
-                    nombreMascota
-                ])
-                }}>Agregar Mascota</button>
+                <label>Nombre Mascota:</label>
+                <input type="text" value={nombreMascota} onChange={(e) => setNombreMascota(e.target.value)} />
+                <label>Nombre Dueño:</label>
+                <input type="text" value={nombreDueño} onChange={(e) => setNombreDueño(e.target.value)} />
+                <label>Fecha:</label>
+                <input type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} />
+                <label>Hora:</label>
+                <input type="time" value={hora} onChange={(e) => setHora(e.target.value)} />
+                <label>Sintomas:</label>
+                <input type="text" value={sintomas} onChange={(e) => setSintomas(e.target.value)} />
+                <button type="submit">Agregar Cita</button>
             </form>
         </div>
     )

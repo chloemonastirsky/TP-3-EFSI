@@ -1,21 +1,17 @@
-import { useState } from 'react';
 import './Cita.css';
-import Formulario from '../Formulario/Formulario';
 
-const Cita = ({ cita, listaMascotas, setListaMascotas}) => {
-    
+const Cita = ({ cita, listaMascotas, setListaMascotas }) => {
+
     return (
         <div className="cita">
-            {listaMascotas.map(mascota => (
-                <li >
-                    <strong>Nombre Mascota:</strong> {mascota.nombreMascota}<br />
-                    <strong>Nombre Dueño:</strong> {mascota.nombreDueño}<br />
-                    <strong>Fecha:</strong> {mascota.fecha}<br />
-                    <strong>Hora:</strong> {mascota.hora}<br />
-                    <strong>Sintomas:</strong> {mascota.sintomas}
-                </li>
-            ))}
+            <p><strong>Nombre Mascota:</strong> {cita.nombreMascota}</p>
+            <p><strong>Nombre Dueño:</strong> {cita.nombreDueño}</p>
+            <p><strong>Fecha:</strong> {cita.fecha}</p>
+            <p><strong>Hora:</strong> {cita.hora}</p>
+            <p><strong>Sintomas:</strong> {cita.sintomas}</p>
+            <button onClick={() => setListaMascotas(listaMascotas.filter(c => c.id !== cita.id))}>Eliminar</button>
         </div>
     )
 }
+
 export default Cita;
